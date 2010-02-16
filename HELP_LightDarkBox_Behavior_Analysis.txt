@@ -1,0 +1,23 @@
+###########################################
+Light Dark Box Behavioral Analysis Script #
+###########################################
+Aaron Wolen #
+#############
+
+DESCRIPTION
+Analyzes raw data from MedAssociates software and returns individual mouse behavior means, strain behavior means and strain behavior SEM (sd/sqrt(n-1)). 
+
+ARGUMENTS
+data
+location of .csv file containing raw LD box data. 
+
+plot
+logical; if TRUE, barplots of analyzed data are plotted by calling ril.barplot function. 
+
+export.raw
+logical; if TRUE, input file is exported along with analyzed results. This is useful if input data time columns are in MedAssociates bizarre format, as these will be converted to seconds before exporting. 
+
+DETAILS
+Adding an extra column to the input data labeled as "INCLUDE" with a TRUE/FALSE value for each mice will inform the script which should be excluded from the analysis. 
+
+If plot is set to true barplots with SEM error bars are exported for each behavior at both time points. P-values from sal vs etoh t.test are also calculated and displayed.
