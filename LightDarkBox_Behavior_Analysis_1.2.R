@@ -1,4 +1,4 @@
-ldbox.analysis<-function(data, plot, export.raw, ...) {
+ldbox.analysis<-function(data, plot, export.raw, sig.test=TRUE, ...) {
 	
 	# Capture input file name
 	input.name<-strsplit(data,split="/")
@@ -69,6 +69,7 @@ ldbox.analysis<-function(data, plot, export.raw, ...) {
 	# Make sure zone totals add up to time points by calculating
 	# variance within a timepoint. Any deviation from zero will
 	# cause an error. 
+	
 	zone.totals<-aggregate(as.numeric(data$Zone.time), 
 		by=list(Mouse=data$Mouse, Timepoint=data$Time.point), FUN=sum)
 		
@@ -178,7 +179,7 @@ ldbox.analysis<-function(data, plot, export.raw, ...) {
 			for(p in 1:length(phenotype.names)) {
 
 				ril.barplot(data=plot.data, pheno=phenotype.names[p],
-						factor="Treatment", sig.test=TRUE, 
+						factor="Treatment", sig.test=sig.test, 
 						legend=ifelse(p==1,TRUE,FALSE), text.size=1.3,
 						title=paste(timepoint[i],": ",phenotype.names[p]))
 				}
