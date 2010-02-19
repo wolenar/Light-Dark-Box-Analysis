@@ -21,3 +21,5 @@ DETAILS
 Adding an extra column to the input data labeled as "INCLUDE" with a TRUE/FALSE value for each mice will inform the script which should be excluded from the analysis. 
 
 If plot is set to true barplots with SEM error bars are exported for each behavior at both time points. P-values from sal vs etoh t.test are also calculated and displayed.
+
+Bar plot colors can be specified by adding bar.cols argument. For example, bar.cols=c("red","blue"). The number of specified colors should correspond to know the number of variables in your data. f
