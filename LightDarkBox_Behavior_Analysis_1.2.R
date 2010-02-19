@@ -7,6 +7,11 @@ ldbox.analysis<-function(data, plot, export.raw, sig.test=TRUE, ...) {
 	# Read in data
 	data<-read.csv(file=data, stringsAsFactors=FALSE)
 	
+	# Check for blank cells or lines
+	if(sum(is.na(data))>0){
+		stop("So, there appears to be either a blank line or a blank cell in your data. Please delete the offending cell or line and try again.", call.=FALSE)
+	}
+	
 	# If 'Include' column is provided exclude
 	# mice with a FALSE value and get rid of 
 	# the column
