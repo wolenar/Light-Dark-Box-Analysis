@@ -187,7 +187,7 @@ ldbox.analysis<-function(data, plot, export.raw, sig.test=TRUE, ...) {
 
 				ril.barplot(data=plot.data, pheno=phenotype.names[p],
 						factor="Treatment", sig.test=sig.test, 
-						legend=ifelse(p==1,TRUE,FALSE), text.size=1.3,
+						legend=TRUE, text.size=1.3,
 						title=paste(timepoint[i],": ",phenotype.names[p]),...)
 				}
 			dev.off()
