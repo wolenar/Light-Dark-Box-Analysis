@@ -52,7 +52,9 @@ ldbox.analysis<-function(data, plot, export.raw, sig.test=TRUE, ...) {
 		# Skip to next column if no rows need converting
 		if(length(unconverted>0)){
 			data[unconverted,i]<-sapply(strsplit(raw.times[unconverted],split=":"), 
-				FUN=function(x) as.numeric(x[1])*60 + as.numeric(x[2]))
+				FUN=function(x) as.numeric(tail(x,n=3)[1])*3600 + 
+				as.numeric(tail(x,n=3)[2])*60 + 
+				as.numeric(tail(x,n=3)[3]))
 			data[,i]<-as.numeric(data[,i])
 			} else{
 				next()
