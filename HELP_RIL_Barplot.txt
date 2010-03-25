@@ -1,0 +1,35 @@
+####################
+RIL Behavior Plots #
+####################
+Aaron Wolen #
+#############
+
+# Requires Strain & Treatment columns
+
+# Arguments
+############
+# pheno: columname that contains pheno data to be plotted
+# factor: columnname that contains factor used to group strains
+#			 (e.g. factor="Treatment")
+# sort: Strain or factor
+# x.rot: Logical, rotate x-axis annotations?
+# y.lab: y-axis label
+# x.lab: x-axis label
+# percent: Logical, is y-axis in percentages
+# sig.test: logical, compute t-tests and add sig markers?
+# by: vector of grouping elements (column names)
+# fill: Fill or no fill bars based on this binary factor.
+#		Provide column index number or name
+# bar.col: vector of colors to differentiate factor levels
+#				(e.g., bar.cols=c("blue","red"))
+#           (or, aaron.cols)
+#ril.barplot(data=all.bxd, pheno="DTL", sort="pvalue")
+
+
+# Version 1.2
+# (DONE) Intelligently determine proper y-axis size
+# (DONE) Intelligently identify factors instead of forcing sal/etoh labels
+# (DONE) Remove requirement for gplots by manually drawing error bars
+
+# Known issues
+# currently can only handle 1 factor with 2 levels
